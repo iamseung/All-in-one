@@ -2,6 +2,7 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.2.10'
 	id 'io.spring.dependency-management' version '1.1.6'
+	id 'com.google.protobuf' version '0.9.4'
 }
 
 group = 'com.example'
@@ -37,6 +38,14 @@ dependencies {
 	testImplementation 'io.projectreactor:reactor-test'
 	testImplementation 'org.springframework.kafka:spring-kafka-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	implementation 'com.google.protobuf:protobuf-java:3.25.2'
+}
+
+// compile 을 위한 task
+protobuf {
+	protoc {
+		artifact = 'com.google.protobuf:protoc:3.25.2'
+	}
 }
 
 tasks.named('test') {

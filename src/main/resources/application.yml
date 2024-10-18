@@ -19,9 +19,9 @@ spring:
   kafka:
     bootstrap-servers:
       # kafka INTERNAL HOST
-      - kafka1:9092
-      - kafka2:9092
-      - kafka3:9092
+      - localhost:19092
+      - localhost:19093
+      - localhost:19094
     consumer:
       group-id: testgroup
       auto-offset-reset: earliest
